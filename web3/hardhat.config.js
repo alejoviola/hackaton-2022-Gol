@@ -2,6 +2,7 @@ require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
 require("dotenv").config();
 require("hardhat-deploy");
+require("@nomiclabs/hardhat-waffle");
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
@@ -22,14 +23,14 @@ module.exports = {
     localhost: {
       chainId: 31337,
     },
-    goerli: {
-      chainId: 5,
-      blockConfirmations: 6,
-      url: GOERLI_RPC_URL,
-      accounts: [PRIVATE_KEY],
-      gas: 2100000,
-      gasPrice: 8000000000,
-    },
+    // goerli: {
+    //   chainId: 5,
+    //   blockConfirmations: 6,
+    //   url: GOERLI_RPC_URL,
+    //   accounts: [PRIVATE_KEY],
+    //   gas: 2100000,
+    //   gasPrice: 8000000000,
+    // },
     mumbai: {
       chainId: 80001,
       blockConfirmations: 6,
@@ -41,14 +42,14 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
-      goerli: ETHERSCAN_API_KEY,
+      // goerli: ETHERSCAN_API_KEY,
       polygonMumbai: POLYGONSCAN_API_KEY,
     },
   },
   solidity: {
     compilers: [
       {
-        version: "0.8.7",
+        version: "0.8.17",
       },
       {
         version: "0.6.7",

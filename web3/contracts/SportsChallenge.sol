@@ -28,10 +28,10 @@ contract SportsChallenges {
         uint8 team2Result
     );
 
-    function createChallenge(address _team2, address _locationProvider)
-        public
-        payable
-    {
+    function createChallenge(
+        address _team2,
+        address _locationProvider
+    ) public payable {
         matchChallenges.push(
             MatchChallenge(
                 msg.sender,
@@ -161,15 +161,13 @@ contract SportsChallenges {
 
             (bool success2, ) = payable(matchChallenges[_challengeId].team2)
                 .call{value: (prizeMinusLocationFee / 2)}("");
-            require(success2 == true, "ETH didn't send to team 1.");
+            require(success2 == true, "ETH didn't send to team 2.");
         }
     }
 
-    function viewMatchChallenge(uint256 _id)
-        public
-        view
-        returns (address[3] memory)
-    {
+    function viewMatchChallenge(
+        uint256 _id
+    ) public view returns (address[3] memory) {
         address team1 = matchChallenges[_id].team1;
         address team2 = matchChallenges[_id].team2;
         address locationProvider = matchChallenges[_id].locationProvider;
