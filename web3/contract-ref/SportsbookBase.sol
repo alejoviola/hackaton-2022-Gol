@@ -21,6 +21,8 @@ contract SportsbookBase {
     MatchChallenge[] public matchChallenges; // Contiene el numero de desafios
 
     mapping(address => uint256) locationProviderFee;
+    mapping(address => bool) enabledAsLocationProvider;
+    mapping(address => uint256) pendingPlayerChallenges;
 
     // EVENTS //
     // Evento que salta cuando el LocationProvider define el final
