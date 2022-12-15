@@ -1,7 +1,9 @@
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+
 export default function MainLayout({ children }) {
     return (
-        <div className="flex flex-col bg-fondoImg bg-no-repeat bg-cover h-screen w-screen">
-            <header className="flex justify-around bg-green-800 bg-opacity-70 py-2">
+        <div className="flex flex-col bg-fondoImg bg-no-repeat bg-fixed bg-cover min-h-screen w-screen">
+            <header className="flex justify-around items-center bg-green-800 bg-opacity-70 py-2">
                 <div className="flex items-center gap-6">
                     <a href="#" target="_blank">
                         <img
@@ -29,9 +31,7 @@ export default function MainLayout({ children }) {
                     <p className="text-4xl font-bold tracking-wider">SPORTSBOOK</p>
                     <p className="bg-orange-600 px-3">SOCIAL, MATCHMAKING AND BETTING APP</p>
                 </div>
-                <div className="flex">
-                    <div>button connect</div>
-                </div>
+                <ConnectButton />
             </header>
             <main className="flex flex-1 p-8 gap-8 backdrop-brightness-50">
                 <aside className="w-1/3 flex flex-col gap-8">
