@@ -1,19 +1,27 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.17;
 
+enum MatchStatus {
+    PENDING,
+    ACCEPTED,
+    STARTED,
+    ENDED
+}
+
 struct MatchChallenge {
     address team1;
     address team2;
-    bool accepted;
-    bool started;
-    bool finished;
+    MatchStatus matchStatus;
     uint256 amount;
     address locationProvider;
 }
 
 contract SportsbookBase {
-    MatchChallenge[] public matchChallenges;
+    // Match state variables
+    MatchChallenge[] public matchChallenges; // Contiene el numero de desafios
 
+    // EVENTS //
+    // Evento que salta cuando el LocationProvider define el final
     event ChallengeResult(
         uint256 indexed MatchChallengeId,
         uint8 team1Result,
@@ -22,23 +30,23 @@ contract SportsbookBase {
 
     constructor() payable {}
 
-    function createChallenge(
-        address _team2,
-        address locationProvider
-    ) public payable {
+    // Crea un desafio
+    function createChallenge(address _team2, address locationProvider)
+        public
+        payable
+    {
         matchChallenges.push(
             MatchChallenge(
                 msg.sender,
                 _team2,
-                false,
-                false,
-                false,
+                MatchStatus.PENDING,
                 msg.value,
                 locationProvider
             )
         );
     }
 
+    // Acepta el desafio
     function acceptChallenge(uint256 _challengeId) public payable {
         require(
             msg.sender == matchChallenges[_challengeId].team2,
@@ -51,10 +59,9 @@ contract SportsbookBase {
         matchChallenges[_challengeId].accepted = true;
     }
 
-    function updateChallengedTeam(
-        uint256 _challengeId,
-        address _newTeam2
-    ) public {
+    function updateChallengedTeam(uint256 _challengeId, address _newTeam2)
+        public
+    {
         require(
             msg.sender == matchChallenges[_challengeId].team1,
             "You're not the team1!"
@@ -178,9 +185,11 @@ contract SportsbookBase {
         }
     }
 
-    function viewMatchChallenge(
-        uint256 _id
-    ) public view returns (address[3] memory) {
+    function viewMatchChallenge(uint256 _id)
+        public
+        view
+        returns (address[3] memory)
+    {
         address team1 = matchChallenges[_id].team1;
         address team2 = matchChallenges[_id].team2;
         address locationProvider = matchChallenges[_id].locationProvider;
