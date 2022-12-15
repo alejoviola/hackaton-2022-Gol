@@ -146,29 +146,21 @@ contract SportsChallenges {
 
         if (_team1Result > _team2Result) {
             (bool success, ) = payable(matchChallenges[_challengeId].team1)
-                .call{
-                value: matchChallenges[_challengeId].prizeMinusLocationFee
-            }("");
+                .call{value: prizeMinusLocationFee}("");
             require(success == true, "ETH didn't send to team 1.");
         }
         if (_team1Result < _team2Result) {
             (bool success, ) = payable(matchChallenges[_challengeId].team2)
-                .call{
-                value: matchChallenges[_challengeId].prizeMinusLocationFee
-            }("");
+                .call{value: prizeMinusLocationFee}("");
             require(success == true, "ETH didn't send to team 2.");
         }
         if (_team1Result == _team2Result) {
             (bool success, ) = payable(matchChallenges[_challengeId].team1)
-                .call{
-                value: matchChallenges[_challengeId].prizeMinusLocationFee / 2
-            }("");
+                .call{value: (prizeMinusLocationFee / 2)}("");
             require(success == true, "ETH didn't send to team 1.");
 
             (bool success2, ) = payable(matchChallenges[_challengeId].team2)
-                .call{
-                value: matchChallenges[_challengeId].prizeMinusLocationFee / 2
-            }("");
+                .call{value: (prizeMinusLocationFee / 2)}("");
             require(success == true, "ETH didn't send to team 1.");
         }
     }
