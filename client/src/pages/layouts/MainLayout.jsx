@@ -82,7 +82,7 @@ export default function MainLayout({ children }) {
                         <p className="text-2xl">History</p>
                     </div>
                 </aside>
-                {children}
+                <div className="bg-black rounded-3xl p-8 flex items-center justify-center w-full">{children}</div>
             </main>
         </div>
     );
