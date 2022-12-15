@@ -139,27 +139,36 @@ contract SportsChallenges {
         // Interact
         uint256 prizeMinusLocationFee = (matchChallenges[_challengeId].amount *
             2) - 0.002 ether;
-        (bool success, ) = payable(matchChallenges[_challengeId].locationProvider).call{value: 0.0015 ether}("");
-            require(success == true, "ETH didn't send to location provider.");
-        }
+        (bool successL, ) = payable(
+            matchChallenges[_challengeId].locationProvider
+        ).call{value: 0.0015 ether}("");
+        require(successL == true, "ETH didn't send to location provider.");
 
         if (_team1Result > _team2Result) {
             (bool success, ) = payable(matchChallenges[_challengeId].team1)
-                .call{value: matchChallenges[_challengeId].prizeMinusLocationFee}("");
+                .call{
+                value: matchChallenges[_challengeId].prizeMinusLocationFee
+            }("");
             require(success == true, "ETH didn't send to team 1.");
         }
         if (_team1Result < _team2Result) {
             (bool success, ) = payable(matchChallenges[_challengeId].team2)
-                .call{value: matchChallenges[_challengeId].prizeMinusLocationFee}("");
+                .call{
+                value: matchChallenges[_challengeId].prizeMinusLocationFee
+            }("");
             require(success == true, "ETH didn't send to team 2.");
         }
         if (_team1Result == _team2Result) {
             (bool success, ) = payable(matchChallenges[_challengeId].team1)
-                .call{value: matchChallenges[_challengeId].prizeMinusLocationFee / 2}("");
+                .call{
+                value: matchChallenges[_challengeId].prizeMinusLocationFee / 2
+            }("");
             require(success == true, "ETH didn't send to team 1.");
 
             (bool success2, ) = payable(matchChallenges[_challengeId].team2)
-                .call{value: matchChallenges[_challengeId].prizeMinusLocationFee / 2}("");
+                .call{
+                value: matchChallenges[_challengeId].prizeMinusLocationFee / 2
+            }("");
             require(success == true, "ETH didn't send to team 1.");
         }
     }
