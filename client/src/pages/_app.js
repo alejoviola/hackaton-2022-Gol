@@ -1,14 +1,22 @@
 import '@rainbow-me/rainbowkit/styles.css';
 
 import { darkTheme, getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit';
-import { configureChains, createClient, WagmiConfig } from 'wagmi';
-import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
+import { configureChains, createClient, WagmiConfig, chain } from 'wagmi';
+import { mainnet, polygon, optimism, arbitrum, hardhat } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
 
 import '../styles/globals.css';
 
-const { chains, provider } = configureChains([mainnet, polygon, optimism, arbitrum], [publicProvider()]);
+const { chains, provider, webSocketProvider } = configureChains(
+    [hardhat],
+    [
+        alchemyProvider({
+            apiKey: 'rqT_KFKGdRBE32ilCs08Lbo4V5kFWL3A',
+        }),
+        publicProvider(),
+    ]
+);
 
 const { connectors } = getDefaultWallets({
     appName: 'My RainbowKit App',
@@ -16,9 +24,10 @@ const { connectors } = getDefaultWallets({
 });
 
 const wagmiClient = createClient({
-    autoConnect: true,
+    autoConnect: false,
     connectors,
     provider,
+    webSocketProvider,
 });
 
 export default function App({ Component, pageProps }) {

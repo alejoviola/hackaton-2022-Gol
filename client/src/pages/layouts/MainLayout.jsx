@@ -1,6 +1,18 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
+import { useAccount } from 'wagmi';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 export default function MainLayout({ children }) {
+    const { address } = useAccount();
+    const router = useRouter();
+
+    useEffect(() => {
+        if (!address) {
+            router.push('/landing');
+        }
+    }, [address]);
+
     return (
         <div className="flex flex-col bg-fondoImg bg-no-repeat bg-fixed bg-cover min-h-screen w-screen">
             <header className="flex justify-around items-center bg-green-800 bg-opacity-70 py-2">
