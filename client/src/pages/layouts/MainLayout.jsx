@@ -2,7 +2,7 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 
 export default function MainLayout({ children }) {
     return (
-        <div className="flex flex-col bg-fondoImg bg-no-repeat bg-cover h-screen w-screen">
+        <div className="flex flex-col bg-fondoImg bg-no-repeat bg-fixed bg-cover min-h-screen w-screen">
             <header className="flex justify-around items-center bg-green-800 bg-opacity-70 py-2">
                 <div className="flex items-center gap-6">
                     <a href="#" target="_blank">
