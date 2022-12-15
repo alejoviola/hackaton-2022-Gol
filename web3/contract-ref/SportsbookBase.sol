@@ -20,6 +20,8 @@ contract SportsbookBase {
     // Match state variables
     MatchChallenge[] public matchChallenges; // Contiene el numero de desafios
 
+    mapping(address => uint256) locationProviderFee;
+
     // EVENTS //
     // Evento que salta cuando el LocationProvider define el final
     event ChallengeResult(
@@ -31,10 +33,10 @@ contract SportsbookBase {
     constructor() payable {}
 
     // Crea un desafio
-    function createChallenge(address _team2, address locationProvider)
-        public
-        payable
-    {
+    function createChallenge(
+        address _team2,
+        address locationProvider
+    ) public payable {
         matchChallenges.push(
             MatchChallenge(
                 msg.sender,
@@ -59,9 +61,10 @@ contract SportsbookBase {
         matchChallenges[_challengeId].accepted = true;
     }
 
-    function updateChallengedTeam(uint256 _challengeId, address _newTeam2)
-        public
-    {
+    function updateChallengedTeam(
+        uint256 _challengeId,
+        address _newTeam2
+    ) public {
         require(
             msg.sender == matchChallenges[_challengeId].team1,
             "You're not the team1!"
@@ -185,11 +188,9 @@ contract SportsbookBase {
         }
     }
 
-    function viewMatchChallenge(uint256 _id)
-        public
-        view
-        returns (address[3] memory)
-    {
+    function viewMatchChallenge(
+        uint256 _id
+    ) public view returns (address[3] memory) {
         address team1 = matchChallenges[_id].team1;
         address team2 = matchChallenges[_id].team2;
         address locationProvider = matchChallenges[_id].locationProvider;
