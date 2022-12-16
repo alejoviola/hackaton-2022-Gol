@@ -22,15 +22,15 @@ export default function History() {
                             <th className="px-5 md:px-0">Bet?</th>
                         </tr>
                     </thead>
-                    <tbody className="text-center text-orange-500 text-2xl">
+                    <tbody className="text-center text-2xl">
                         <tr className="cursor-pointer" onClick={toggleOpenDetails}>
                             <td className="flex justify-between font-bold py-3">
                                 {openDetails ? <span>▼</span> : <span>►</span>}
                                 <p>🐬 L.I Dolphins</p>
                             </td>
-                            <td>22/09/22</td>
-                            <td>19:00</td>
-                            <td>Lujan Club</td>
+                            <td className="text-orange-500">22/09/22</td>
+                            <td className="text-orange-500">19:00</td>
+                            <td className="text-orange-500">Lujan Club</td>
                             <td className="font-bold">$100</td>
                             <td className="text-lime-500 font-bold">$500</td>
                         </tr>

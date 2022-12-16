@@ -28,9 +28,9 @@ export default function AcceptOrDecline() {
                                 {openDetails ? <span>▼</span> : <span>►</span>}
                                 <p>🐬 L.I Dolphins</p>
                             </td>
-                            <td>22/09/22</td>
-                            <td>19:00</td>
-                            <td>Lujan Club</td>
+                            <td className="text-orange-500">22/09/22</td>
+                            <td className="text-orange-500">19:00</td>
+                            <td className="text-orange-500">Lujan Club</td>
                             <td className="font-bold">$100</td>
                             <td className="text-lime-500 font-bold">$500</td>
                         </tr>
