@@ -77,22 +77,20 @@ Permite reclamar todos los tokens que corresponden al wallet por haber arbitrado
 ### Read Functions
 
 **function viewMatchChallenge(uint256 \_id) public view returns (address[3] memory)**
-
 Retorna [team1, team2, locationProvider];
 
 **function viewMatchStatus(uint256 \_id) public view returns (MatchStatus)**
-
 Retorna 0, 1, 2, 3
 (pendiente de aceptar, aceptado, iniciado, terminado)
 
 **function viewUnclaimedPrize() public view returns (uint256)**
-
 Muestra el monto de premios sin reclamar por un equipo
 
 **function viewLocationProviderWithdrawableAmount()public view returns (uint256)**
-
 Muestra el monto de premios sin reclamar por un proveedor de locación
 
 **function viewMatchFee() public view returns (uint256)**
-
 Muestra el fee que se compone de lo que se abonará al proveedor de locación y al dueño del contrato Sportsbook.
+
+**function getAllMatches() public view returns (MatchChallenge[])**
+Retorna todos los partidos que fueron creados en el contrato.
