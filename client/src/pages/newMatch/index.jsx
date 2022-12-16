@@ -18,21 +18,21 @@ export default function NewMatch() {
         <MainLayout>
             <form onSubmit={(e) => send(e)}>
                 <div className={style.title1}>
-                    <h1 className={style.title}>Create New Match</h1>
+                    <h1 className="text-white text-4xl">Create New Match</h1>
                 </div>
 
-                <div className={style.names}>
+                <div className="flex flex-col md:flex-row justify-around">
                     <div className={style.mount}>
-                        <h1>OPPONENT</h1>
+                        <p>OPPONENT</p>
                         <input type="text" name="rival" onChange={(e) => onChange(e)} className={style.name} />
                     </div>
                     <div className={style.mount}>
-                        <h1>REFEREE</h1>
+                        <p>REFEREE</p>
                         <input type="text" name="referi" onChange={(e) => onChange(e)} className={style.name} />
                     </div>
                 </div>
                 <div className={style.mount}>
-                    <h1>BET AMOUNT</h1>
+                    <p>BET AMOUNT</p>
                     <input type="text" name="bet" onChange={(e) => onChange(e)} className={style.name} />
                 </div>
                 <div className={style.button1}>
