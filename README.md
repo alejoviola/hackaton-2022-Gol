@@ -51,6 +51,8 @@ La interfaz para proveedores de locacion tiene las siguientes funcionalidades.
 
 ## Smart contract
 
+Deploy: https://mumbai.polygonscan.com/address/0x4f1b7e7f61ad6a6efa788e974bbb9e31519ec05c
+
 ### Write Functions
 
 **function createChallenge(address \_team2, address \_locationProvider) public payable**
@@ -117,3 +119,17 @@ Retorna todos los partidos que fueron creados en el contrato.
 6.	Valderrama20 - jose23122009@gmail.com
  
 #### Nombre del Proyecto: Sportsbook
+
+## Cosas que nos faltaron:
+- La interface del Referee, que se encarga de actualizar los estados del partido desde su inicio hasta su finalización.
+- El contrato funciona en su totalidad, pero no se llegó a integrar algunas de las funciones relacionadas a los NFT en el Front.
+- La UI está completa pero no interactúa en su totalidad con el contrato.
+- No está implementado el matchmaking.
+- No está implementado los perfiles de los usuarios. (Social)
+- No está implementado la busqueda por ID de partidos.
+- No está implementado el rematch.
+
+## Imágenes
+<img src="./concepto/front-reference/newchallenge.png" />
+<img src="./concepto/front-reference/landing.png" />
+<img src="./concepto/front-reference/acceptdecline.png" />
