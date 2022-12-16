@@ -5,11 +5,12 @@ import { configureChains, createClient, WagmiConfig, chain } from 'wagmi';
 import { mainnet, polygon, optimism, arbitrum, hardhat, polygonMumbai } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
+import 'react-toastify/dist/ReactToastify.css';
 
 import '../styles/globals.css';
 
 const { chains, provider, webSocketProvider } = configureChains(
-    [polygonMumbai, hardhat],
+    [polygonMumbai],
     [
         alchemyProvider({
             apiKey: 'rqT_KFKGdRBE32ilCs08Lbo4V5kFWL3A',
@@ -24,7 +25,7 @@ const { connectors } = getDefaultWallets({
 });
 
 const wagmiClient = createClient({
-    autoConnect: false,
+    autoConnect: true,
     connectors,
     provider,
     webSocketProvider,
