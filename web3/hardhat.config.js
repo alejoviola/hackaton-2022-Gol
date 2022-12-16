@@ -2,7 +2,6 @@ require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
 require("dotenv").config();
 require("hardhat-deploy");
-require("@nomiclabs/hardhat-waffle");
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
@@ -15,7 +14,7 @@ const MUMBAI_RPC_URL = process.env.MUMBAI_RPC_URL || "";
 const POLYGONSCAN_API_KEY = process.env.POLYGONSCAN_API_KEY || "";
 
 module.exports = {
-  defaultNetwork: "goerli",
+  defaultNetwork: "hardhat",
   networks: {
     hardhat: {
       chainId: 31337,
