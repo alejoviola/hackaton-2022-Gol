@@ -17,6 +17,17 @@ npm install
 npm run dev
 ```
 
+## Network
+#### Tesnet: Mumbai
+
+Por favor, antes de testear el proyecto, fondear su wallet con TEST MATIC.
+
+#### Faucet:
+https://mumbaifaucet.com/
+
+https://faucet.polygon.technology/
+
+
 ## Frontend
 
 Primero se llega a una landing que explica brevemente la dapp, permite hacer login con wallet, y luego se ingresa a la app.
