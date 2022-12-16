@@ -63,10 +63,10 @@ contract SportsChallenges is Ownable {
         contractOwnerFee = _contractOwnerFee;
     }
 
-    function createChallenge(
-        address _team2,
-        address _locationProvider
-    ) public payable {
+    function createChallenge(address _team2, address _locationProvider)
+        public
+        payable
+    {
         require(
             msg.value >= (locationProviderFee + contractOwnerFee),
             "Didn't send enough ETH to cover the minimum cost!"
@@ -268,9 +268,11 @@ contract SportsChallenges is Ownable {
 
     /* Read functions */
 
-    function viewMatchChallenge(
-        uint256 _id
-    ) public view returns (address[3] memory) {
+    function viewMatchChallenge(uint256 _id)
+        public
+        view
+        returns (address[3] memory)
+    {
         address team1 = matchChallenges[_id].team1;
         address team2 = matchChallenges[_id].team2;
         address locationProvider = matchChallenges[_id].locationProvider;
