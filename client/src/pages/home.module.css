@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    gap: 1rem;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 4rem;
@@ -18,8 +19,6 @@
 .sub {
     background-color: rgb(255, 119, 0);
     display: inline-block;
-    margin: 20px 0 0 100px;
-    padding-right: 50px;
     color: white;
     font-size: 20px;
 }
@@ -28,9 +27,8 @@
     position: relative;
 }
 .title {
-    font-size: 80px;
+    font-size: 3rem;
     color: white;
-    padding: 0 100px 0 0;
     position: relative;
     z-index: 2;
 }
