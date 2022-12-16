@@ -28,10 +28,10 @@ contract SportsChallenges {
         uint8 team2Result
     );
 
-    function createChallenge(
-        address _team2,
-        address _locationProvider
-    ) public payable {
+    function createChallenge(address _team2, address _locationProvider)
+        public
+        payable
+    {
         matchChallenges.push(
             MatchChallenge(
                 msg.sender,
@@ -165,9 +165,11 @@ contract SportsChallenges {
         }
     }
 
-    function viewMatchChallenge(
-        uint256 _id
-    ) public view returns (address[3] memory) {
+    function viewMatchChallenge(uint256 _id)
+        public
+        view
+        returns (address[3] memory)
+    {
         address team1 = matchChallenges[_id].team1;
         address team2 = matchChallenges[_id].team2;
         address locationProvider = matchChallenges[_id].locationProvider;
@@ -177,5 +179,9 @@ contract SportsChallenges {
 
     function viewMatchStatus(uint256 _id) public view returns (MatchStatus) {
         return matchChallenges[_id].matchStatus;
+    }
+
+    function getAllMatches() public view returns (MatchChallenge[] memory) {
+        return matchChallenges;
     }
 }
