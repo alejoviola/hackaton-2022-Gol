@@ -105,3 +105,15 @@ Muestra el fee que se compone de lo que se abonará al proveedor de locación y 
 
 **function getAllMatches() public view returns (MatchChallenge[])**
 Retorna todos los partidos que fueron creados en el contrato.
+
+## Datos del Equipo
+#### Nombre del Equipo: FRONTEAM (ex Astronaut Penguin)
+#### Miembros:
+1.	Antiguo Astronauta – alejoviola16@gmail.com
+2.	Luciano Oliva Bianco – lucianoolivabianco@gmail.com
+3.	Emanuel Suarez – braianesuarez@gmail.com
+4.	Manuel Salvador – manu.sacr@hotmail.com
+5.	Valentin Manfredi - valentinnehuen@hotmail.com
+6.	Valderrama20 - jose23122009@gmail.com
+ 
+#### Nombre del Proyecto: Sportsbook
