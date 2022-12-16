@@ -17,7 +17,8 @@ export default function NewMatch() {
     const { address } = useAccount();
     
     
-    const contractAddress = "0xa3Ce41430f671e0F7BCa3BeE6550dEf2D484C3eD";
+    // const contractAddress = "0xa3Ce41430f671e0F7BCa3BeE6550dEf2D484C3eD";
+    const contractAddress = "0x29403A5Ce562879e08C22b814F5C1Bd8C0a4dC70";
     
     const { config } = usePrepareContractWrite({
         address: contractAddress,
@@ -49,7 +50,7 @@ export default function NewMatch() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        write?.()
+        write?.();
     }
 
   
