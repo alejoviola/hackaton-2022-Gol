@@ -1,0 +1,98 @@
+.wallets{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wallets h1{
+    font-size: 50px;
+    margin: 10px 0;
+    color: white;
+}
+.wallets h2{
+    font-size: 30px;
+    color: white;
+
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    color: white;
+    backdrop-filter: blur(60);
+}
+
+.title h1{
+    font-size: 80px;
+    color: red;
+
+}
+
+.btn1{
+    margin: 20px 0;
+    color: white;
+    font-size: 40px;
+     padding: 5px 15px;
+     border-radius: 50px;
+    background-color: green;
+    transition: 0.5s;
+}
+
+.btn1:hover{
+    padding: 8px 20px;
+    font-size: 45px;
+}
+.btn2{
+    color: white;
+    font-size: 20px;
+    padding: 5px 15px;
+    background-color: red;
+    border-radius: 50px;
+    transition: 0.5s;
+
+
+}
+
+.btn2:hover{
+    padding: 8px 20px;
+    font-size:25px;
+    
+}
+
+.buttom{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.inputs{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.inputs button{
+    color: white;
+ background-color: red;
+ display: block;
+ width: 200px;
+ border-radius: 50px;
+ font-size: 20px;
+ padding: 10px 20px;
+ margin-top: 30px;
+}
+
+.inputs2{
+    display: flex;
+}
+
+.input{
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 50px;
+    
+    margin: 0 20px;
+    
+}
