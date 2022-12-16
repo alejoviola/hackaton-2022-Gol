@@ -23,7 +23,7 @@ export default function MatchSnippet({ gameData }) {
             <td>-</td>
             <td>-</td>
             <td className="font-bold">{gameData[4].slice(0, 8)}</td>
-            <td className="text-lime-500 font-bold">{`${(parseInt(gameData[3]._hex)) / 100000000000000000} MATIC`}</td>
+            <td className="text-lime-500 font-bold">{`HIDDEN`}</td>
         </tr>
         {openDetails && (
             <tr className="bg-neutral-500 text-white">

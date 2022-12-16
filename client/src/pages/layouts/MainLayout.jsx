@@ -82,6 +82,9 @@ export default function MainLayout(props) {
                                     Accept/Decline
                                 </Link>
                             </div>
+                                <Link href="/referee" className="text-2xl">
+                                referee
+                                </Link>
                             <div className="flex items-center gap-4">
                                 <img
                                     src="https://cdn1.iconfinder.com/data/icons/material-core/21/history-512.png"
@@ -112,6 +115,9 @@ export default function MainLayout(props) {
                                 Accept/Decline
                             </Link>
                         </div>
+                        <Link href="/referee" className="text-2xl">
+                                referee
+                                </Link>
                         <div className="flex items-center gap-4">
                             <img
                                 src="https://cdn1.iconfinder.com/data/icons/material-core/21/history-512.png"
