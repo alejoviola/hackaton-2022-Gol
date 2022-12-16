@@ -6,6 +6,17 @@ Permite la creacion de desafios deportivos de un equipo a otro, especificando un
 
 Al momento de finalización de cada encuentro, se paga el monto apostado al ganador, y un pequeño fee al proveedor de locacion y al dueño del contrato Sportsbook por el servicio. Tambien se mintea un NFT para cada equipo como conmemoración del resultado del encuentro.
 
+## Como usar
+
+Para usar el cliente, se recomienda usar la version LTS de node 16.13.0 o superior
+
+```
+git clone https://github.com/alejoviola/hackaton-2022-Gol.git
+cd client
+npm install
+npm run dev
+```
+
 ## Frontend
 
 Primero se llega a una landing que explica brevemente la dapp, permite hacer login con wallet, y luego se ingresa a la app.
