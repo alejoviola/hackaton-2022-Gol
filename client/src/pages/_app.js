@@ -5,6 +5,7 @@ import { configureChains, createClient, WagmiConfig, chain } from 'wagmi';
 import { mainnet, polygon, optimism, arbitrum, hardhat, polygonMumbai } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
+import 'react-toastify/dist/ReactToastify.css';
 
 import '../styles/globals.css';
 
