@@ -55,7 +55,6 @@ export default function NewMatch() {
   
 
     return (
-<<<<<<< HEAD
         <div className={style.body}>
             <MainLayout>
                 <form onSubmit={(e) => handleSubmit(e)}>
@@ -76,24 +75,7 @@ export default function NewMatch() {
                     <div className={style.mount}>
                         <h1>BET AMOUNT</h1>
                         <input type="text" name="bet" onChange={(e) => setBet(e.target.value)} className={style.name} />
-=======
-        <MainLayout>
-            <form onSubmit={(e) => send(e)}>
-                <div className={style.title1}>
-                    <h1 className={style.title}>Create New Match</h1>
-                </div>
-
-                <div className={style.names}>
-                    <div className={style.mount}>
-                        <h1>OPPONENT</h1>
-                        <input type="text" name="rival" onChange={(e) => onChange(e)} className={style.name} />
                     </div>
-                    <div className={style.mount}>
-                        <h1>REFEREE</h1>
-                        <input type="text" name="referi" onChange={(e) => onChange(e)} className={style.name} />
->>>>>>> d08bd44b94bab2dcdd321955c860cec05c7021c4
-                    </div>
-                </div>
                 <div className={style.mount}>
                     <h1>BET AMOUNT</h1>
                     <input type="text" name="bet" onChange={(e) => onChange(e)} className={style.name} />
@@ -103,5 +85,6 @@ export default function NewMatch() {
                 </div>
             </form>
         </MainLayout>
+    </div>
     );
 }
