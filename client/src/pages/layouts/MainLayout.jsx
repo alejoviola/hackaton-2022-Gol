@@ -43,10 +43,10 @@ export default function MainLayout({ children }) {
                     <p className="text-4xl font-bold tracking-wider">SPORTSBOOK</p>
                     <p className="bg-orange-600 px-3">SOCIAL, MATCHMAKING AND BETTING APP</p>
                 </div>
-                <ConnectButton />
+                <ConnectButton chainStatus="none" />
             </header>
             <main className="flex flex-1 p-8 gap-8 backdrop-brightness-50">
-                <aside className="w-1/3 flex flex-col gap-8">
+                <aside className="w-1/4 flex flex-col gap-8">
                     <div className="flex justify-center gap-4">
                         <div className="w-11 h-11 p-2 bg-white rounded-full cursor-pointer">
                             <img
@@ -82,7 +82,7 @@ export default function MainLayout({ children }) {
                         <p className="text-2xl">History</p>
                     </div>
                 </aside>
-                <div className="bg-black rounded-3xl p-8 flex items-center justify-center w-full">{children}</div>
+                <div className="bg-black rounded-3xl p-8 w-full">{children}</div>
             </main>
         </div>
     );
