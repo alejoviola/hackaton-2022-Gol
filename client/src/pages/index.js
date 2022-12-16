@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useAccount } from 'wagmi';
-import Link from 'next/Link';
+import Link from 'next/link';
 import football from '../assets/img/football.png';
 import basketball from '../assets/img/basketball.png';
 import { ConnectButton } from '@rainbow-me/rainbowkit';

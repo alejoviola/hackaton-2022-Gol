@@ -1,14 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MainLayout from '../layouts/MainLayout';
 import MatchSnippet from './MatchSnippet';
+import {useFilterMatches} from '../../hooks/useFilterMatches'
+import {useFilterAccount} from '../../hooks/useFilterAccount'
 
 export default function AcceptOrDecline() {
     const [openDetails, setOpenDetails] = useState(false);
-    const [ gamesData, setGamesData ] = useState([ {id: 1, team1: 'team1', team2: 'team2', referee: 'referee', bet: 200}, {id: 2, team1: 'team1', team2: 'team2', referee: 'referee', bet: 300} ])
+    // const [ gamesData, setGamesData ] = useState([])
+    const {dataFiltered: gamesData} = useFilterMatches('PENDING')
+    const {matches} = useFilterAccount(gamesData, true)
+    
+    useEffect(() => {
+        console.log(matches)
+    }, [])
 
     const toggleOpenDetails = () => {
         setOpenDetails((prev) => !prev);
     };
+
+
+    useEffect(()=> {
+    }, [])
 
     return (
         <MainLayout>
@@ -24,8 +36,8 @@ export default function AcceptOrDecline() {
                     </tr>
                 </thead>
                 <tbody className="text-center text-orange-500 text-2xl">
-                    {   gamesData && 
-                        gamesData.map((game) => {
+                    {   
+                        matches.map((game) => {
                             return <MatchSnippet key={game.id} gameData={game} />
                         })
                     }
