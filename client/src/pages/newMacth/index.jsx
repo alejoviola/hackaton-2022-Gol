@@ -44,7 +44,7 @@ export default function NewMach() {
           <input type="text" name="bet" onChange={e => onChange(e) } className={style.name} />
         </div>
         <div className={style.button1}>
-          <button className={style.button}>enviar</button>
+          <button className={style.button}>SUBMIT</button>
         </div>
         
         </form>

@@ -33,6 +33,7 @@
     color: white;
     padding-bottom: 20px;
     font-size:40px;
+    
 
 }
 .title1{
@@ -40,7 +41,11 @@
     justify-content: center;
 }
 .button{
-background-color: aliceblue;
+color: white;
+padding: 8px 75px;
+border-radius: 50px;
+font-size: 20px;
+background-color: rgb(234, 88, 12);
 }
 
 .button1{
