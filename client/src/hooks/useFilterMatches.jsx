@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useContractRead } from 'wagmi';
 import { ABI } from '../../constants/abi';
+import contract from '../../constants/contract';
 
 export const useFilterMatches = (filter) => {
     const { data, isError, isLoading } = useContractRead({
-        address: '0x29403A5Ce562879e08C22b814F5C1Bd8C0a4dC70',
+        address: contract,
         abi: ABI,
         functionName: 'getAllMatches',
     });

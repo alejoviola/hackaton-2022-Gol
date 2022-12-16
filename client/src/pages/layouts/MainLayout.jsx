@@ -3,6 +3,7 @@ import { useAccount } from 'wagmi';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { ToastContainer } from 'react-toastify';
 
 export default function MainLayout(props) {
     const [openOptions, setOpenOptions] = useState(false);
@@ -21,6 +22,7 @@ export default function MainLayout(props) {
 
     return (
         <div className="flex flex-col bg-fondoImg bg-no-repeat bg-fixed bg-cover min-h-screen w-screen">
+            <ToastContainer />
             <header className="flex flex-col gap-3 md:flex-row md:gap-0 justify-around items-center bg-green-800 bg-opacity-70 py-2">
                 <div className="hidden items-center gap-6 md:flex">
                     <a href="https://discord.com/" target="_blank">

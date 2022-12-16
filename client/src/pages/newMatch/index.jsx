@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MainLayout from '../layouts/MainLayout';
 import style from './newMach.module.css';
 import { usePrepareContractWrite, useContractWrite, useWaitForTransaction, useAccount } from 'wagmi';
 import { ethers, BigNumber } from 'ethers';
+import { toast } from 'react-toastify';
 import abi from '../../../constants/abi.json';
 import contract from '../../../constants/contract';
 
 export default function NewMatch() {
     const [locationProvider, setLocationProvider] = useState('');
     const [challengedTeam, setChallengedTeam] = useState('');
-    const [bet, setBet] = useState(0.001);
+    const [bet, setBet] = useState(0.002);
     const { address } = useAccount();
 
     // const contractAddress = "0xa3Ce41430f671e0F7BCa3BeE6550dEf2D484C3eD";
@@ -30,7 +31,7 @@ export default function NewMatch() {
         ],
     });
 
-    const { data, write } = useContractWrite(config);
+    const { data, write, error } = useContractWrite(config);
 
     const { isLoading, isSuccess } = useWaitForTransaction({
         hash: data?.hash,
@@ -46,56 +47,63 @@ export default function NewMatch() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        write?.();
+        if (bet >= 0.002) {
+            write?.();
+        }
     };
 
-    return (
-        <div className={style.body}>
-            <MainLayout>
-                <form onSubmit={(e) => handleSubmit(e)}>
-                    <div className={style.title1}>
-                        <h1 className={style.title}>Create New Match</h1>
-                    </div>
+    useEffect(() => {
+        if (isLoading) {
+            toast.info('Cargando creación del challenge', { theme: 'dark' });
+        }
+        if (isSuccess) {
+            toast.success('¡Challenge creado!', { theme: 'dark' });
+        }
+        if (error) {
+            toast.error('¡Ups! Algo salió mal', { theme: 'dark' });
+        }
+    }, [isLoading, isSuccess, error]);
 
-                    <div className={style.names}>
-                        <div className={style.mount}>
-                            <h1>OPPONENT</h1>
-                            <input
-                                type="text"
-                                name="rival"
-                                placeholder="Opponent's wallet"
-                                onChange={(e) => onChangeChallengedTeam(e)}
-                                className={style.name}
-                            />
-                        </div>
-                        <div className={style.mount}>
-                            <h1>REFEREE</h1>
-                            <input
-                                type="text"
-                                name="referi"
-                                placeholder="Referee's wallet"
-                                onChange={(e) => onChangeLocationProvider(e)}
-                                className={style.name}
-                            />
-                        </div>
-                    </div>
+    return (
+        <MainLayout>
+            <form onSubmit={(e) => handleSubmit(e)}>
+                <div className={style.title1}>
+                    <h1 className="text-3xl">Create New Match</h1>
+                </div>
+
+                <div className={style.names}>
                     <div className={style.mount}>
-                        <h1>BET AMOUNT</h1>
+                        <p className="text-xl">OPPONENT</p>
                         <input
                             type="text"
-                            name="bet"
-                            value={bet}
-                            onChange={(e) => setBet(e.target.value)}
+                            name="rival"
+                            placeholder="Opponent's wallet"
+                            onChange={(e) => onChangeChallengedTeam(e)}
                             className={style.name}
                         />
                     </div>
-                    <div className={style.button1}>
-                        <button type="submit" className={style.button}>
-                            SUBMIT
-                        </button>
+                    <div className={style.mount}>
+                        <p className="text-xl">REFEREE</p>
+                        <input
+                            type="text"
+                            name="referi"
+                            placeholder="Referee's wallet"
+                            onChange={(e) => onChangeLocationProvider(e)}
+                            className={style.name}
+                        />
                     </div>
-                </form>
-            </MainLayout>
-        </div>
+                </div>
+                <div className={style.mount}>
+                    <p className="text-xl">BET AMOUNT</p>
+                    <input type="text" name="bet" value={bet} onChange={(e) => setBet(e.target.value)} className={style.name} />
+                    <span>Minimo 0.002 para crear el challenge</span>
+                </div>
+                <div className={style.button1}>
+                    <button type="submit" className={style.button}>
+                        SUBMIT
+                    </button>
+                </div>
+            </form>
+        </MainLayout>
     );
 }
