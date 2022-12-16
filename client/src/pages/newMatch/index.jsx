@@ -50,7 +50,7 @@ export default function NewMatch() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        write?.();
+        write?.()
     }
 
   
