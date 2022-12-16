@@ -28,7 +28,7 @@ export default function NewMatch() {
             locationProvider,
             // BigNumber.from(uint256 variable),
             {
-                value: ethers.utils.parseEther((0.001).toString()),
+                value: ethers.utils.parseEther((bet).toString()),
             },
         ],
     });
@@ -65,23 +65,19 @@ export default function NewMatch() {
                     <div className={style.names}>
                         <div className={style.mount}>
                             <h1>OPPONENT</h1>
-                            <input type="text" name="rival" onChange={(e) => onChangeChallengedTeam(e)} className={style.name} />
+                            <input type="text" name="rival" placeholder="Opponent's wallet" onChange={(e) => onChangeChallengedTeam(e)} className={style.name} />
                         </div>
                         <div className={style.mount}>
                             <h1>REFEREE</h1>
-                            <input type="text" name="referi" onChange={(e) => onChangeLocationProvider(e)} className={style.name} />
+                            <input type="text" name="referi" placeholder="Referee's wallet"  onChange={(e) => onChangeLocationProvider(e)} className={style.name} />
                         </div>
                     </div>
                     <div className={style.mount}>
                         <h1>BET AMOUNT</h1>
-                        <input type="text" name="bet" onChange={(e) => setBet(e.target.value)} className={style.name} />
+                        <input type="text" name="bet" value={bet} onChange={(e) => setBet(e.target.value)} className={style.name} />
                     </div>
-                <div className={style.mount}>
-                    <h1>BET AMOUNT</h1>
-                    <input type="text" name="bet" onChange={(e) => onChange(e)} className={style.name} />
-                </div>
                 <div className={style.button1}>
-                    <button className={style.button}>SUBMIT</button>
+                    <button type='submit' className={style.button}>SUBMIT</button>
                 </div>
             </form>
         </MainLayout>
