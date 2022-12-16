@@ -2,6 +2,7 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import Link from 'next/Link';
 
 export default function MainLayout({ children }) {
     const { address } = useAccount();
@@ -17,21 +18,21 @@ export default function MainLayout({ children }) {
         <div className="flex flex-col bg-fondoImg bg-no-repeat bg-fixed bg-cover min-h-screen w-screen">
             <header className="flex justify-around items-center bg-green-800 bg-opacity-70 py-2">
                 <div className="flex items-center gap-6">
-                    <a href="#" target="_blank">
+                    <a href="https://discord.com/" target="_blank">
                         <img
                             src="https://cdn.logojoy.com/wp-content/uploads/20210422104926/Discord-Logo-White.png"
                             alt="Discord Icon"
                             className="h-14 w-14"
                         />
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="https://twitter.com/?lang=es" target="_blank">
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/81/81725.png"
                             alt="Twitter Icon"
                             className="invert h-10 w-10"
                         />
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="https://www.youtube.com/" target="_blank">
                         <img
                             src="https://cdn-icons-png.flaticon.com/512/49/49411.png"
                             alt="Youtube Icon"
@@ -58,10 +59,10 @@ export default function MainLayout({ children }) {
                     </div>
                     <button className="bg-lime-600 rounded-full text-2xl py-2">Social</button>
                     <button className="bg-orange-600 rounded-full text-2xl py-2">MATCHMAKING</button>
-                    <div className="text-2xl flex gap-8">
+                    <Link href="/newMatch" className="text-2xl flex gap-8">
                         <span className="block w-14 text-center">&#9658;</span>
                         <span>New Match</span>
-                    </div>
+                    </Link>
                     <div className="flex items-center gap-4">
                         <div className="relative">
                             <img
@@ -71,7 +72,9 @@ export default function MainLayout({ children }) {
                             />
                             <div className="w-4 h-4 bg-red-500 rounded-full absolute -right-1 bottom-1"></div>
                         </div>
-                        <p className="text-2xl">Accept/Decline</p>
+                        <Link href="/acceptOrDecline" className="text-2xl">
+                            Accept/Decline
+                        </Link>
                     </div>
                     <div className="flex items-center gap-4">
                         <img
@@ -79,7 +82,9 @@ export default function MainLayout({ children }) {
                             alt="History Icon"
                             className="invert w-14"
                         />
-                        <p className="text-2xl">History</p>
+                        <Link href="/history" className="text-2xl">
+                            History
+                        </Link>
                     </div>
                 </aside>
                 <div className="bg-black bg-opacity-60 rounded-3xl p-8 w-full">{children}</div>

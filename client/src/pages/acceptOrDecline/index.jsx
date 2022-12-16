@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import MainLayout from '../layouts/MainLayout';
 
 export default function AcceptOrDecline() {
-    const [openDetails, setOpenDetails] = useState(true);
+    const [openDetails, setOpenDetails] = useState(false);
 
     const toggleOpenDetails = () => {
         setOpenDetails((prev) => !prev);
@@ -25,7 +25,7 @@ export default function AcceptOrDecline() {
                     <tr className="cursor-pointer" onClick={toggleOpenDetails}>
                         <td className="flex justify-between font-bold py-3">
                             <p>🐬 L.I Dolphins</p>
-                            {!!openDetails ? <span>▼</span> : <span>►</span>}
+                            {openDetails ? <span>▼</span> : <span>►</span>}
                         </td>
                         <td>22/09/22</td>
                         <td>19:00</td>
@@ -33,7 +33,7 @@ export default function AcceptOrDecline() {
                         <td className="font-bold">$100</td>
                         <td className="text-lime-500 font-bold">$500</td>
                     </tr>
-                    {!!openDetails && (
+                    {openDetails && (
                         <tr className="bg-neutral-400 text-white">
                             <td className="flex flex-col gap-3 p-3">
                                 <div>
