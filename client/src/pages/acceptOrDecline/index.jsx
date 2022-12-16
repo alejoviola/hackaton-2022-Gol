@@ -34,7 +34,7 @@ export default function AcceptOrDecline() {
                         <td className="text-lime-500 font-bold">$500</td>
                     </tr>
                     {openDetails && (
-                        <tr className="bg-neutral-400 text-white">
+                        <tr className="bg-neutral-500 text-white">
                             <td className="flex flex-col gap-3 p-3">
                                 <div>
                                     <p>Sport:</p>
