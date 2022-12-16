@@ -3,23 +3,22 @@ import MainLayout from '../layouts/MainLayout';
 import MatchSnippet from './MatchSnippet';
 import { useFilterMatches } from '../../hooks/useFilterMatches';
 import { useFilterAccount } from '../../hooks/useFilterAccount';
+import { setRevalidateHeaders } from 'next/dist/server/send-payload';
 
 export default function AcceptOrDecline() {
-    const [data, setData] = useState(null);
     const [openDetails, setOpenDetails] = useState(false);
     // const [ gamesData, setGamesData ] = useState([])
+    const [data, setData] = useState(null);
     const { dataFiltered: gamesData } = useFilterMatches('PENDING');
     const { matches } = useFilterAccount(gamesData, true);
 
     useEffect(() => {
-        console.log({ matches });
-    }, []);
+        setData(matches);
+    }, [matches]);
 
     const toggleOpenDetails = () => {
         setOpenDetails((prev) => !prev);
     };
-
-    useEffect(() => {}, []);
 
     return (
         <MainLayout>
@@ -35,7 +34,7 @@ export default function AcceptOrDecline() {
                     </tr>
                 </thead>
                 <tbody className="text-center text-orange-500 text-2xl">
-                    {matches.map((game) => {
+                    {data?.map((game) => {
                         return <MatchSnippet key={game.id} gameData={game} />;
                     })}
                 </tbody>

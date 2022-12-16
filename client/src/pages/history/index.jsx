@@ -36,13 +36,13 @@ export default function History() {
                     </thead>
                     <tbody className="text-center text-2xl">
                         {!!dataFiltered ? (
-                            dataFiltered.map((item, index) => (
+                            dataFiltered.map((match, index) => (
                                 <>
                                     <tr key={index} className="cursor-pointer" onClick={() => handleOpenDetails(index)}>
                                         <td className="flex justify-between font-bold py-3">
                                             {openDetails === index ? <span>▼</span> : <span>►</span>}
-                                            <p>{`${item.team1.substring(0, 4)}...${item.team1.substring(
-                                                item.team1.length - 4
+                                            <p>{`${match.team1.substring(0, 4)}...${match.team1.substring(
+                                                match.team1.length - 4
                                             )}`}</p>
                                         </td>
                                         <td className="text-orange-500">22/09/22</td>
@@ -50,7 +50,7 @@ export default function History() {
                                         <td className="text-orange-500">Lujan Club</td>
                                         <td className="font-bold">$100</td>
                                         <td className="text-lime-500 font-bold">
-                                            {parseInt(item.amount._hex, 16).toString().replace(/0*$/, '')} MATIC
+                                            {`${parseInt(match.amount._hex) / 1000000000000000000} MATIC`}
                                         </td>
                                     </tr>
                                     {openDetails === index && (

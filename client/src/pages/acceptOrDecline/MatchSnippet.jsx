@@ -12,18 +12,20 @@ export default function MatchSnippet({ gameData }) {
         setOpenDetails((prev) => !prev);
     };
 
+    console.log(gameData);
+
     return (
         <>
             <tr className="cursor-pointer" onClick={toggleOpenDetails}>
                 <td className="flex justify-between font-bold py-3">
                     {openDetails ? <span>▼</span> : <span>►</span>}
-                    <p>{gameData[0].slice(0, 8)}</p>
+                    <p>{gameData.team1.slice(0, 8)}</p>
                 </td>
                 <td>-</td>
                 <td>-</td>
                 <td>-</td>
-                <td className="font-bold">{gameData[4].slice(0, 8)}</td>
-                <td className="text-lime-500 font-bold">{`${parseInt(gameData[3]._hex) / 1000000000000000000} MATIC`}</td>
+                <td className="font-bold">{gameData.locationProvider.slice(0, 8)}</td>
+                <td className="text-lime-500 font-bold">{`${parseInt(gameData.amount._hex) / 1000000000000000000} MATIC`}</td>
             </tr>
             {openDetails && (
                 <tr className="bg-neutral-500 text-white">
