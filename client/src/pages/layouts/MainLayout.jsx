@@ -2,7 +2,7 @@ import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import Link from 'next/Link';
+import Link from 'next/link';
 
 export default function MainLayout(props) {
     const [openOptions, setOpenOptions] = useState(false);
