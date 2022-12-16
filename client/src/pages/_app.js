@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../styles/globals.css';
 
 const { chains, provider, webSocketProvider } = configureChains(
-    [polygonMumbai, hardhat],
+    [polygonMumbai],
     [
         alchemyProvider({
             apiKey: 'rqT_KFKGdRBE32ilCs08Lbo4V5kFWL3A',
