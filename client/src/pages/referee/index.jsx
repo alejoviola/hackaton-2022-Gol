@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useFilterMatches } from '../../hooks/useFilterMatches';
 import MainLayout from '../layouts/MainLayout';
 
-export default function AcceptOrDecline() {
+export default function acceptReferi() {
     const [openDetails, setOpenDetails] = useState(false);
+
+    
 
    const data = useFilterMatches("ACCEPTED")
    console.log(data)
