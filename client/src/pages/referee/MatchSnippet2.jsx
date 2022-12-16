@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MainLayout from '../layouts/MainLayout';
 import { useAccount } from 'wagmi';
 import { BigNumber } from 'ethers';
+import Link from 'next/link';
 
 export default function MatchSnippet({ gameData }) {
     const [openDetails, setOpenDetails] = useState(false);
@@ -33,11 +34,13 @@ export default function MatchSnippet({ gameData }) {
                             <p>Accept</p>
                             <p>Challenge</p>
                         </div>
+                        <Link  href="/referi" > 
                         <img
                             src="https://static.vecteezy.com/system/resources/previews/001/186/943/non_2x/green-play-button-png.png"
                             alt="Play Button"
                             className="w-20"
                         />
+                        </Link>
                     </div>
                 </td>
                 <td>
