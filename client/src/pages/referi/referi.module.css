@@ -58,3 +58,41 @@
     font-size:25px;
     
 }
+
+.buttom{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.inputs{
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.inputs button{
+    color: white;
+ background-color: red;
+ display: block;
+ width: 200px;
+ border-radius: 50px;
+ font-size: 20px;
+ padding: 10px 20px;
+ margin-top: 30px;
+}
+
+.inputs2{
+    display: flex;
+}
+
+.input{
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 50px;
+    
+    margin: 0 20px;
+    
+}
