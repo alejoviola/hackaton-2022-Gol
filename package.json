@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "dotenv": "^16.0.3"
+  },
+  "dependencies": {
+    "next": "^13.0.7"
   }
 }

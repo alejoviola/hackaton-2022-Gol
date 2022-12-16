@@ -1,58 +1,46 @@
-.body{
-    
-}
-
-.title{
-    color:  white;
+.title {
+    color: white;
     font-size: 70px;
 }
 
-.names{
+.names {
     display: flex;
     justify-content: space-around;
 }
 
-.name{
+.name {
     padding: 10px 30px;
     border-radius: 50px;
 }
 
-.mount{
-    
+.mount {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 80px;
     padding-top: 30px;
-    
-
 }
 
 .mount h1 {
-
     color: white;
     padding-bottom: 20px;
-    font-size:40px;
-    
-
+    font-size: 40px;
 }
-.title1{
+.title1 {
     display: flex;
     justify-content: center;
 }
-.button{
-color: white;
-padding: 8px 75px;
-border-radius: 50px;
-font-size: 20px;
-background-color: rgb(234, 88, 12);
+.button {
+    color: white;
+    padding: 8px 75px;
+    border-radius: 50px;
+    font-size: 20px;
+    background-color: rgb(234, 88, 12);
 }
 
-.button1{
+.button1 {
     display: flex;
     justify-content: center;
     padding: 20px;
     margin: 10px;
-    
 }
-
