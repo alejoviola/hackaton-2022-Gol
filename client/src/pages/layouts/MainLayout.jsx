@@ -82,7 +82,7 @@ export default function MainLayout({ children }) {
                         <p className="text-2xl">History</p>
                     </div>
                 </aside>
-                <div className="bg-black rounded-3xl p-8 w-full">{children}</div>
+                <div className="bg-black bg-opacity-60 rounded-3xl p-8 w-full">{children}</div>
             </main>
         </div>
     );
