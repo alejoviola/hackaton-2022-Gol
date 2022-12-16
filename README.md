@@ -20,7 +20,7 @@ npm run dev
 ## Network
 #### Tesnet: Mumbai
 
-Por favor, antes de testear el proyecto, fondear su wallet con TEST MATIC.
+Por favor, antes de testear el proyecto, fondear su wallet con MATIC MUMBAI.
 
 #### Faucet:
 https://mumbaifaucet.com/
